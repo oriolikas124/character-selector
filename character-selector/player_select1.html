@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IDOL CONCERTO</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/game.css">
+</head>
+
+<body>
+    <h1 class="text-center font-bold text-5xl p-5">IDOL CONCERTO</h1>
+    
+    <div class="flex flex-col lg:flex-row items-start gap-4 mt-6 w-full px-6">
+        <!-- キャラクター画像 -->
+        <div class="w-full lg:w-1/3">
+            <div id="playerImage" class="flex justify-center items-center"></div>
+            <div class="my-1">
+                <button onclick="start()" id="select-button"
+                    class="hidden bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 w-full">
+                    決定
+                </button>
+            </div>
+        </div>
+
+        <div class="w-full lg:w-2/3">
+            <!-- メッセージ -->
+            <div class="flex flex-col text-left text-xl bg-slate-800 text-white border border-2 border-slate-900 p-4 h-[180px] rounded">
+                <p id="characterName" class="mb-2"></p>
+                <p id="message" class="flex-grow py-3"></p>
+                <!-- 続きマーク -->
+                <div class="text-right mt-auto">
+                    <span id="continue-mark" class="hidden py-2 px-5 border border-white text-white text-sm rounded">Enter</span>
+                </div>
+            </div>
+
+            <!-- キャラクター選択 -->
+            <div id="select-character" class="text-center my-3 rounded-lg w-full h-full flex flex-col justify-center">
+                <!-- サムネイル画像エリア -->
+                <div id="thumbnail-container" class="flex justify-center gap-2"></div>
+
+                <!-- ステータス -->
+                <div id="status-container" class="my-3 p-4 text-left">
+                    <h3 id="player-name" class="text-3xl font-bold"></h3>
+                    <div id="player-furigana" class="text-gray-600 text-sm mb-4"></div>
+                    <div id="player-description" class="my-4 text-gray-700"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 外部JavaScriptファイルの読み込み -->
+    <script src="js/data.js" defer></script>
+    <script src="js/player1.js" defer></script>
+    <script src="js/game.js" defer></script>
+</body>
+
+</html>
